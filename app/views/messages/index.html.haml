@@ -1,0 +1,56 @@
+.flash-box
+.wrapper
+  .chat-side
+    .side-header
+      .side-header_box
+        .side-header_box_user-name
+          NAGAHASHI
+        .side-header_box_menu
+          .side-header_box_menu_new-group
+            =link_to "https://www.yahoo.co.jp/", class: "side-header_box_menu_new-group" do
+              = fa_icon 'edit', class: "side-header_box_menu_new-group--icon"
+          .side-header_box_menu_edit-user
+            =link_to "https://www.yahoo.co.jp/", class: "side-header_box_menu_edit-user" do
+              = fa_icon 'cog', class: "side-header_box_menu_edit-user--icon"
+    .groups
+      .group
+        .group_group-name
+          グループ名
+        .group_latest-message
+          ラストメッセージ
+  .chat-main
+    .main-header
+      .main-header_left-box
+        .main-header_left-box_current-group
+          <span style="color:black">グループ名</span>
+        .main-header_left-box_member-list 
+          Member：NAGAHASHI
+      .main-header_edit-btn
+        = link_to 'Edit', "https://www.yahoo.co.jp/"
+    .messages
+      .message
+        .message_upper-info
+          .message_upper-info_talker
+            NAGAHSHI
+          .message_upper-info_date
+            2019/09/07(Sat) 12:07:16
+        .message_text
+          Hello!
+      .message
+        .message_upper-info
+          .message_upper-info_talker
+            NAGAHSHI
+          .message_upper-info_date
+            2019/09/07(Sat) 12:07:16
+        .message_text
+          Hello!
+    .form
+      .new_message
+        .input-box
+          = form_tag() do
+            %input{type: "text", placeholder: "type a message", class: "field"}
+            .input-box_image
+              %label
+                = fa_icon 'image',  class: "input-box_image"
+                %input.file{type: "file"}/
+            %input{type: "submit", value: "SENT", class: "sentbtn"}/
