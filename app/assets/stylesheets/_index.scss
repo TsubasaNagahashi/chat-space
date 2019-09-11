@@ -1,12 +1,10 @@
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 a{
   color: #38aef0;
   text-decoration: none;
-}
-
-div{
-  color: white;
 }
 
 .flash-box{ 
@@ -19,6 +17,10 @@ div{
 .chat-side{
   width: 300px;
   float: left;
+}
+
+.side-header_box_user-name{
+  color: white;
 }
 
 .side-header_box_menu{
@@ -62,10 +64,12 @@ div{
 .group_group-name{
   font-size: 15px;
   margin-bottom: 5px;
+  color: white;
 }
 
 .group_latest-message{
   font-size: 11px;
+  color: white;
 }
 
 .chat-main{
@@ -154,7 +158,7 @@ div{
   position: relative;
 }
 
-.field{
+.field-message{
   position: relative;
   width: calc(100vw - 500px);
   float: left;
