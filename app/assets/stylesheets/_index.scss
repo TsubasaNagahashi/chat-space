@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-}
+} 
 
 a{
   color: #38aef0;
@@ -31,7 +31,7 @@ a{
   background-color: #253141;
   height: 100px;
   padding: 0 20px;
-  display: flex;
+  // display: flex;
   align-items: center;
 }
 
@@ -44,14 +44,14 @@ a{
 
 .side-header_box_menu_new-group{
   &--icon {
-    color: white;
+    color: $white;
   }
 }
 
 .side-header_box_menu_edit-user{
   margin-left: 0.3rem;
   &--icon {
-    color: white;
+    color: $white;
   }
 }
 
@@ -59,6 +59,9 @@ a{
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
+  margin-top: 76px;
+  width: calc(100vw - 1000px);
+  margin-left: 0px;
 }
 
 .group_group-name{

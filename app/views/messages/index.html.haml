@@ -2,7 +2,7 @@
   - flash.each do |key, value|
     = content_tag :div, value, class: key
 .wrapper
-  = render 'shared/side_bar'
+  = render "shared/side_bar" 
   .chat-main
     .main-header
       .main-header_left-box
@@ -13,29 +13,14 @@
       .main-header_edit-btn
         = link_to 'Edit', "https://www.yahoo.co.jp/"
     .messages
-      .message
-        .message_upper-info
-          .message_upper-info_talker
-            NAGAHSHI
-          .message_upper-info_date
-            2019/09/07(Sat) 12:07:16
-        .message_text
-          Hello!
-      .message
-        .message_upper-info
-          .message_upper-info_talker
-            NAGAHSHI
-          .message_upper-info_date
-            2019/09/07(Sat) 12:07:16
-        .message_text
-          Hello!
+      = render partial: "devise/shared/message", collection: @messages
     .form
       .new_message
         .input-box
-          = form_tag() do
-            %input{type: "text", placeholder: "type a message", class: "field-message"}
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, placeholder: 'type a message'
             .input-box_image
-              %label
-                = fa_icon 'image',  class: "input-box_image"
-                %input.file{type: "file"}/
-            %input{type: "submit", value: "SENT", class: "sentbtn"}/ 
+              = f.label :image do
+                = fa_icon 'picture-o'
+                = f.file_field :image
+            = f.submit 'Send', class: 'sentbtn'
