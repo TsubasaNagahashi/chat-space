@@ -30,9 +30,10 @@ a{
 .side-header{
   background-color: #253141;
   height: 100px;
-  padding: 0 20px;
-  // display: flex;
+  display: flex;
   align-items: center;
+  padding: 0 20px;
+  width: 100%;
 }
 
 .side-header_box{
@@ -56,14 +57,17 @@ a{
 }
 
 .groups{
-  background-color: #2f3e51;
   height: calc(100vh - 100px);
+  background-color: #2f3e51;
   padding: 20px 20px 0;
-  margin-top: 76px;
-  width: calc(100vw - 1000px);
-  margin-left: 0px;
+  overflow: scroll;
+  width: 100%;
+  
 }
 
+.group{
+  margin-bottom: 40px;
+}
 .group_group-name{
   font-size: 15px;
   margin-bottom: 5px;
@@ -120,6 +124,7 @@ a{
   width: calc(100vw - 300px);
   float: left;
   padding: 46px 40px;
+  overflow: scroll;
 }
 
 .message{
@@ -170,6 +175,12 @@ a{
   border-style: none;
 } 
 
+#message_content{
+  height: 50px;
+  width: 770px;
+  padding-left: 10px;
+  border-style: none;
+}
 
 .sentbtn{
   width: 100px;
@@ -179,7 +190,7 @@ a{
   background-color: #38aef0;
   color: white;
   cursor: pointer;
-  float: left;
+  float: right;
 }
 
 .input-box_image{
@@ -191,6 +202,12 @@ a{
   cursor: pointer;
 }
 
-.file{
+.image{
   display: none;
+}
+
+.icon{
+  position: absolute;
+  right: 100px;
+  top: 15px;
 }
