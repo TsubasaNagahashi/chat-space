@@ -1,12 +1,10 @@
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+} 
 
 a{
   color: #38aef0;
   text-decoration: none;
-}
-
-div{
-  color: white;
 }
 
 .flash-box{ 
@@ -21,6 +19,10 @@ div{
   float: left;
 }
 
+.side-header_box_user-name{
+  color: white;
+}
+
 .side-header_box_menu{
   display: flex;
 }
@@ -28,9 +30,10 @@ div{
 .side-header{
   background-color: #253141;
   height: 100px;
-  padding: 0 20px;
   display: flex;
   align-items: center;
+  padding: 0 20px;
+  width: 100%;
 }
 
 .side-header_box{
@@ -42,30 +45,38 @@ div{
 
 .side-header_box_menu_new-group{
   &--icon {
-    color: white;
+    color: $white;
   }
 }
 
 .side-header_box_menu_edit-user{
   margin-left: 0.3rem;
   &--icon {
-    color: white;
+    color: $white;
   }
 }
 
 .groups{
-  background-color: #2f3e51;
   height: calc(100vh - 100px);
+  background-color: #2f3e51;
   padding: 20px 20px 0;
+  overflow: scroll;
+  width: 100%;
+  
 }
 
+.group{
+  margin-bottom: 40px;
+}
 .group_group-name{
   font-size: 15px;
   margin-bottom: 5px;
+  color: white;
 }
 
 .group_latest-message{
   font-size: 11px;
+  color: white;
 }
 
 .chat-main{
@@ -113,6 +124,7 @@ div{
   width: calc(100vw - 300px);
   float: left;
   padding: 46px 40px;
+  overflow: scroll;
 }
 
 .message{
@@ -154,7 +166,7 @@ div{
   position: relative;
 }
 
-.field{
+.field-message{
   position: relative;
   width: calc(100vw - 500px);
   float: left;
@@ -163,6 +175,12 @@ div{
   border-style: none;
 } 
 
+#message_content{
+  height: 50px;
+  width: 770px;
+  padding-left: 10px;
+  border-style: none;
+}
 
 .sentbtn{
   width: 100px;
@@ -172,7 +190,7 @@ div{
   background-color: #38aef0;
   color: white;
   cursor: pointer;
-  float: left;
+  float: right;
 }
 
 .input-box_image{
@@ -184,6 +202,12 @@ div{
   cursor: pointer;
 }
 
-.file{
+.image{
   display: none;
+}
+
+.icon{
+  position: absolute;
+  right: 100px;
+  top: 15px;
 }
