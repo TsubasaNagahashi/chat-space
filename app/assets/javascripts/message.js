@@ -4,13 +4,13 @@ $(function(){
 
     var image = message.image? `<img src="${message.image}" class="message_text"></img>` : "" ;
 
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}">
                   <div class="message_upper-info">
                     <div class="message_upper-info_talker">
                       ${message.user_name}
                     </div>
                     <div class="message_upper-info_date">
-                      ${message.date}
+                      ${message.created_at}
                     </div>
                   </div>
                   <div class="message_text">
@@ -48,4 +48,28 @@ $(function(){
       $('.sentbtn').prop('disabled', false);
     })
   })
-})
+
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.message:last').data("id");
+      $.ajax({
+        url: "api/messages",
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        messages.forEach(function (message) {
+        insertHTML = buildHTML(message);
+        $('.messages').append(insertHTML); 
+        $('div').animate({scrollTop: $('.messages').height()})
+        })
+      })
+      .fail(function() {
+        alert('更新に失敗しました');
+      });
+    };
+  } 
+  setInterval(reloadMessages, 5000); 
+});
