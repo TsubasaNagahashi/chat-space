@@ -7,7 +7,7 @@
           %li= message
   .chat-group-form__field
     .chat-group-form__field--left 
-      = f.label :name, "グループ名", class: 'chat-group-form__label'
+      = f.label :name, "グループ名", class: 'chat-group-form__label', data: @group.id
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
 

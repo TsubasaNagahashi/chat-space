@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
   def index
+    
     @users = User.where('name LIKE(?) and id != ?', "#{params[:user]}%", current_user)
+    # .where.not(group_users_params)
+    # binding.pry
     respond_to do |format|
       format.html
       format.json
@@ -24,4 +27,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
+
+  # def group_users_params
+  #   params.require(:groups).permit(:group_id, :user_id)
+  # end
+
 end

@@ -31,7 +31,8 @@ $(document).on("turbolinks:load", function() {
         type: 'GET',
         url: '/users',
         data: {
-          user: user
+          user: user,
+          group_id: $(".chat-group-form__label").attr("data")
         },
         dataType: 'json'
       })
